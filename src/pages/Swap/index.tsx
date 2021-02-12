@@ -1,6 +1,7 @@
 import { CurrencyAmount, JSBI, Token, Trade } from '@pancakeswap-libs/sdk'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown } from 'react-feather'
+import { useTranslation } from 'react-i18next'
 import { CardBody, ArrowDownIcon, Button, IconButton, Text } from '@pancakeswap-libs/uikit'
 import { ThemeContext } from 'styled-components'
 import AddressInputPanel from 'components/AddressInputPanel'
@@ -37,13 +38,16 @@ import Loader from 'components/Loader'
 import { TranslateString } from 'utils/translateTextHelpers'
 import PageHeader from 'components/PageHeader'
 import ConnectWalletButton from 'components/ConnectWalletButton'
+
 import AppBody from '../AppBody'
+
 
 const { main: Main } = TYPE
 
 const Swap = () => {
+  
   const loadedUrlParams = useDefaultsFromURLSearch()
-
+  const { t, i18n } = useTranslation()
   // token warning stuff
   const [loadedInputCurrency, loadedOutputCurrency] = [
     useCurrency(loadedUrlParams?.inputCurrencyId),
@@ -281,8 +285,11 @@ const Swap = () => {
     [onCurrencySelection, checkForSyrup]
   )
 
+  
+
   return (
     <>
+      
       <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}
@@ -295,6 +302,7 @@ const Swap = () => {
       />
       <CardNav />
       <AppBody>
+        
         <Wrapper id="swap-page">
           <ConfirmSwapModal
             isOpen={showConfirm}
@@ -309,14 +317,19 @@ const Swap = () => {
             swapErrorMessage={swapErrorMessage}
             onDismiss={handleConfirmDismiss}
           />
-          <PageHeader title="แลกเปลี่ยน" description="แลกเปลี่ยนโทเค็นในทันที" />
+          <PageHeader title="Exchange" description="Trade tokens in an instant" />
           <CardBody>
+          <div>
+          <div>
+      {t('hello.label')}
+    </div>
+    </div>
             <AutoColumn gap="md">
               <CurrencyInputPanel
                 label={
                   independentField === Field.OUTPUT && !showWrap && trade
                     ? 'From (estimated)'
-                    : TranslateString(76, 'จาก')
+                    : TranslateString(76, 'From')
                 }
                 value={formattedAmounts[Field.INPUT]}
                 showMaxButton={!atMaxAmountInput}
@@ -353,7 +366,7 @@ const Swap = () => {
                 value={formattedAmounts[Field.OUTPUT]}
                 onUserInput={handleTypeOutput}
                 label={
-                  independentField === Field.INPUT && !showWrap && trade ? 'To (estimated)' : TranslateString(80, 'ถึง')
+                  independentField === Field.INPUT && !showWrap && trade ? 'To (estimated)' : TranslateString(80, 'To')
                 }
                 showMaxButton={false}
                 currency={currencies[Field.OUTPUT]}

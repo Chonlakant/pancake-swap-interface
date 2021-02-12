@@ -33,7 +33,6 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
   user-select: none;
   border: none;
   padding: 0 0.5rem;
-
   :focus,
   :hover {
     background-color: ${({ theme }) => darken(0.05, theme.colors.input)};
@@ -175,7 +174,7 @@ export default function CurrencyInputPanel({
                     ? `${currency.symbol.slice(0, 4) 
                       }...${ 
                       currency.symbol.slice(currency.symbol.length - 5, currency.symbol.length)}`
-                    : currency?.symbol) || <TranslatedText translationId={82}>เลือกสกุลเงิน</TranslatedText>}
+                    : currency?.symbol) || <TranslatedText translationId={82}>Select a currency</TranslatedText>}
                 </Text>
               )}
               {!disableCurrencySelect && <ChevronDownIcon />}

@@ -8,6 +8,7 @@ import ListsUpdater from './state/lists/updater'
 import MulticallUpdater from './state/multicall/updater'
 import TransactionUpdater from './state/transactions/updater'
 import Providers from './Providers'
+import LangState from './context/lang';
 import 'inter-ui'
 import './i18n'
 

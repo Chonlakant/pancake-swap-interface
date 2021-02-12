@@ -1,4 +1,5 @@
 export const EN = { code: 'en', language: 'English' }
+export const TH = { code: 'th', language: 'Thai' }
 export const AR = { code: 'ar', language: 'العربية' }
 export const CA = { code: 'ca', language: 'Català' }
 export const ZHCN = { code: 'zh-CN', language: '繁體中文' }
@@ -30,6 +31,7 @@ export const VI = { code: 'vi', language: 'Tiếng Việt' }
 
 export const allLanguages = [
   EN,
+  TH,
   AR,
   CA,
   ZHCN,

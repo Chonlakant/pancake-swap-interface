@@ -2,43 +2,47 @@ import { MenuEntry } from '@pancakeswap-libs/uikit'
 
 const config: MenuEntry[] = [
   {
-    label: 'หน้าหลัก',
+    label: 'Home',
     icon: 'HomeIcon',
-    href: 'https://pancakeswap.finance/',
+    href: '/finance',
   },
   {
-    label: 'เทรด',
+    label: 'Trade',
     icon: 'TradeIcon',
     initialOpenState: true,
     items: [
       {
-        label: 'แลกเปลี่ยน',
+        label: 'Exchange',
         href: '/swap',
       },
       {
-        label: 'สภาพคล่อง',
+        label: 'Liquidity',
         href: '/pool',
       },
     ],
   },
   {
-    label: 'ฟาร์ม',
+    label: 'Farms',
     icon: 'FarmIcon',
     href: 'https://pancakeswap.finance/farms',
   },
   {
-    label: 'พูลล์',
+    label: 'Pools',
     icon: 'PoolIcon',
     href: 'https://pancakeswap.finance/syrup',
   },
   {
-    label: 'ลอตเตอรี่',
+    label: 'Lottery',
     icon: 'TicketIcon',
     href: 'https://pancakeswap.finance/lottery',
   },
-
   {
-    label: 'ทีมและโปรไฟล์',
+    label: 'NFT',
+    icon: 'NftIcon',
+    href: 'https://pancakeswap.finance/nft',
+  },
+  {
+    label: 'Teams & Profile',
     icon: 'GroupsIcon',
     items: [
       {
@@ -52,29 +56,7 @@ const config: MenuEntry[] = [
     ],
   },
   {
-    label: 'ข้อมูล',
-    icon: 'InfoIcon',
-    items: [
-      {
-        label: 'Overview',
-        href: 'https://pancakeswap.info',
-      },
-      {
-        label: 'Tokens',
-        href: 'https://pancakeswap.info/tokens',
-      },
-      {
-        label: 'Pairs',
-        href: 'https://pancakeswap.info/pairs',
-      },
-      {
-        label: 'Accounts',
-        href: 'https://pancakeswap.info/accounts',
-      },
-    ],
-  },
-  {
-    label: 'เพิ่มเติม',
+    label: 'More',
     icon: 'MoreIcon',
     items: [
       {

@@ -14,6 +14,7 @@ import MigrateV1 from './MigrateV1'
 import MigrateV1Exchange from './MigrateV1/MigrateV1Exchange'
 import RemoveV1Exchange from './MigrateV1/RemoveV1Exchange'
 import Pool from './Pool'
+import Finance from './finance'
 import PoolFinder from './PoolFinder'
 // import Farm from './Farm'
 import RemoveLiquidity from './RemoveLiquidity'
@@ -91,6 +92,7 @@ export default function App() {
       .then(translationApiResponse => {
         if (translationApiResponse.data.length < 1) {
           setTranslations(['error'])
+          console.log('error11')
         } else {
           setTranslations(translationApiResponse.data)
         }
@@ -98,6 +100,7 @@ export default function App() {
       .then(() => setTranslatedLanguage(selectedLanguage))
       .catch(error => {
         setTranslations(['error'])
+        console.log('error11')
         console.error(error)
       })
   }
@@ -122,6 +125,7 @@ export default function App() {
                   <Popups />
                   <Web3ReactManager>
                     <Switch>
+                      <Route exact strict path="/finance" component={Finance} />
                       <Route exact strict path="/swap" component={Swap} />
                       <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
                       <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
