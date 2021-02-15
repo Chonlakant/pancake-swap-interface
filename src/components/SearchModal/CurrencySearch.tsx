@@ -145,7 +145,7 @@ export function CurrencySearch({
       <PaddedColumn gap="14px">
         <RowBetween>
           <Text>
-            <TranslatedText translationId={82}>Select a token</TranslatedText>
+            <TranslatedText translationId={82}>เลือกโทเค็น</TranslatedText>
             <QuestionHelper
               text={TranslateString(
                 130,
@@ -158,7 +158,7 @@ export function CurrencySearch({
         <SearchInput
           type="text"
           id="token-search-input"
-          placeholder={t('tokenSearchPlaceholder')}
+          placeholder={t('ค้นหาโทเค็น')}
           value={searchQuery}
           ref={inputRef as RefObject<HTMLInputElement>}
           onChange={handleInput}
@@ -169,7 +169,7 @@ export function CurrencySearch({
         )}
         <RowBetween>
           <Text fontSize="14px">
-            <TranslatedText translationId={126}>Token name</TranslatedText>
+            <TranslatedText translationId={126}>ชื่อโทเค็น</TranslatedText>
           </Text>
           <SortButton ascending={invertSearchOrder} toggleSortOrder={() => setInvertSearchOrder((iso) => !iso)} />
         </RowBetween>

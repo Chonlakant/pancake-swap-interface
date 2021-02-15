@@ -317,19 +317,15 @@ const Swap = () => {
             swapErrorMessage={swapErrorMessage}
             onDismiss={handleConfirmDismiss}
           />
-          <PageHeader title="Exchange" description="Trade tokens in an instant" />
+          <PageHeader title="แลกเปลี่ยน" description="แลกเปลี่ยนโทเค็นในทันที" />
           <CardBody>
-          <div>
-          <div>
-      {t('hello.label')}
-    </div>
-    </div>
+        
             <AutoColumn gap="md">
               <CurrencyInputPanel
                 label={
                   independentField === Field.OUTPUT && !showWrap && trade
-                    ? 'From (estimated)'
-                    : TranslateString(76, 'From')
+                    ? 'จาก (estimated)'
+                    : TranslateString(76, 'จาก')
                 }
                 value={formattedAmounts[Field.INPUT]}
                 showMaxButton={!atMaxAmountInput}
@@ -366,7 +362,7 @@ const Swap = () => {
                 value={formattedAmounts[Field.OUTPUT]}
                 onUserInput={handleTypeOutput}
                 label={
-                  independentField === Field.INPUT && !showWrap && trade ? 'To (estimated)' : TranslateString(80, 'To')
+                  independentField === Field.INPUT && !showWrap && trade ? 'To (estimated)' : TranslateString(80, 'ถึง')
                 }
                 showMaxButton={false}
                 currency={currencies[Field.OUTPUT]}
@@ -394,7 +390,7 @@ const Swap = () => {
                   <AutoColumn gap="4px">
                     {Boolean(trade) && (
                       <RowBetween align="center">
-                        <Text fontSize="14px">Price</Text>
+                        <Text fontSize="14px">ราคา</Text>
                         <TradePrice
                           price={trade?.executionPrice}
                           showInverted={showInverted}

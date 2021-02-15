@@ -12,10 +12,10 @@ const Nav = ({ activeIndex = 0 }: { activeIndex?: number }) => (
   <StyledNav>
     <ButtonMenu activeIndex={activeIndex} size="sm" variant="subtle">
       <ButtonMenuItem id="swap-nav-link" to="/swap" as={Link}>
-        <TranslatedText translationId={8}>Swap</TranslatedText>
+        <TranslatedText translationId={8}>สวอป</TranslatedText>
       </ButtonMenuItem>
       <ButtonMenuItem id="pool-nav-link" to="/pool" as={Link}>
-        <TranslatedText translationId={74}>Liquidity</TranslatedText>
+        <TranslatedText translationId={74}>ลิควิดลิตี้</TranslatedText>
       </ButtonMenuItem>
       <ButtonMenuItem
         id="pool-nav-link"
@@ -24,7 +24,7 @@ const Nav = ({ activeIndex = 0 }: { activeIndex?: number }) => (
         target="_blank"
         rel="noreferrer noopener"
       >
-        Bridge
+        บริดจ์
       </ButtonMenuItem>
     </ButtonMenu>
   </StyledNav>

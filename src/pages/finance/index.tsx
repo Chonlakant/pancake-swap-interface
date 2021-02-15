@@ -43,8 +43,6 @@ import "react-simple-flex-grid/lib/main.css";
 import AppBody from '../AppBody'
 
 
-const { main: Main } = TYPE
-
 const Finance = () => {
 
   return (

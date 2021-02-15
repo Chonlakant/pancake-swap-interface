@@ -2,47 +2,47 @@ import { MenuEntry } from '@pancakeswap-libs/uikit'
 
 const config: MenuEntry[] = [
   {
-    label: 'Home',
+    label: 'หน้าหลัก',
     icon: 'HomeIcon',
-    href: '/finance',
+    href: 'http://pancakex-frontend.web.app/',
   },
   {
-    label: 'Trade',
+    label: 'เทรด',
     icon: 'TradeIcon',
     initialOpenState: true,
     items: [
       {
-        label: 'Exchange',
+        label: 'แลกเปลี่ยน',
         href: '/swap',
       },
       {
-        label: 'Liquidity',
+        label: 'ลิควิดลิตี้',
         href: '/pool',
       },
     ],
   },
   {
-    label: 'Farms',
+    label: 'ฟามร์',
     icon: 'FarmIcon',
-    href: 'https://pancakeswap.finance/farms',
+    href: 'http://pancakex-frontend.web.app/farms',
   },
   {
-    label: 'Pools',
+    label: 'พูล',
     icon: 'PoolIcon',
-    href: 'https://pancakeswap.finance/syrup',
+    href: 'http://pancakex-frontend.web.app/pools',
   },
   {
-    label: 'Lottery',
+    label: 'ลอตเตอรี่',
     icon: 'TicketIcon',
-    href: 'https://pancakeswap.finance/lottery',
+    href: 'http://pancakex-frontend.web.app/lottery',
   },
   {
     label: 'NFT',
     icon: 'NftIcon',
-    href: 'https://pancakeswap.finance/nft',
+    href: 'http://pancakex-frontend.web.app/nft',
   },
   {
-    label: 'Teams & Profile',
+    label: 'ทีม & โปรไฟล์',
     icon: 'GroupsIcon',
     items: [
       {
@@ -56,7 +56,7 @@ const config: MenuEntry[] = [
     ],
   },
   {
-    label: 'More',
+    label: 'เพิ่มเติม',
     icon: 'MoreIcon',
     items: [
       {

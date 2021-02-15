@@ -63,9 +63,9 @@ export default function Pool() {
     <>
       <CardNav activeIndex={1} />
       <AppBody>
-        <PageHeader title="Liquidity" description="Add liquidity to receive LP tokens">
+        <PageHeader title="ลิควิดลิตี้" description="เพิ่มลิควิดลิตี้ไป LP โทเค็น">
           <Button id="join-pool-button" as={Link} to="/add/ETH">
-            <TranslatedText translationId={100}>Add Liquidity</TranslatedText>
+            <TranslatedText translationId={100}>เพิ่ม ลิควิดลิตี้</TranslatedText>
           </Button>
         </PageHeader>
         <AutoColumn gap="lg" justify="center">
@@ -73,7 +73,7 @@ export default function Pool() {
             <AutoColumn gap="12px" style={{ width: '100%' }}>
               <RowBetween padding="0 8px">
                 <Text color={theme.colors.text}>
-                  <TranslatedText translationId={102}>Your Liquidity</TranslatedText>
+                  <TranslatedText translationId={102}>คุณ ลิควิดลิตี้</TranslatedText>
                 </Text>
                 <Question
                   text={TranslateString(
@@ -86,7 +86,7 @@ export default function Pool() {
               {!account ? (
                 <LightCard padding="40px">
                   <Body color={theme.colors.textDisabled} textAlign="center">
-                    Connect to a wallet to view your liquidity.
+                     เชื่อมต่อไปวอเล็ทของคุณเพื่อดูลิควิดลิตี้.
                   </Body>
                 </LightCard>
               ) : v2IsLoading ? (
@@ -113,13 +113,13 @@ export default function Pool() {
                 <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {hasV1Liquidity
                     ? 'Uniswap V1 liquidity found!'
-                    : TranslateString(106, "Don't see a pool you joined?")}{' '}
+                    : TranslateString(106, "ไม่เห็นการเข้าร่วมพูลของคุณ?")}{' '}
                   <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
-                    {hasV1Liquidity ? 'Migrate now.' : TranslateString(108, 'Import it.')}
+                    {hasV1Liquidity ? 'Migrate now.' : TranslateString(108, 'นำเข้า.')}
                   </StyledInternalLink>
                 </Text>
                 <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
-                  Or, if you staked your FLIP tokens in a farm, unstake them to see them here.
+                  หรือหากเดิมพัน FLIP ในฟาร์มให้ปลดล็อกเพื่อดูที่นี่
                 </Text>
               </div>
             </AutoColumn>

@@ -53,7 +53,7 @@ const PageHeader = ({ title, description, children }: PageHeaderProps) => {
             </Text>
           )}
         </Details>
-        <IconButton variant="text" onClick={onPresentSettings} title="Settings">
+        <IconButton variant="text" onClick={onPresentSettings} title="ตั้งค่า">
           <CogIcon />
         </IconButton>
         <IconButton variant="text" onClick={onPresentRecentTransactions} title="Recent transactions">

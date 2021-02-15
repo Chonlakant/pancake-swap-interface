@@ -14,14 +14,13 @@ import MigrateV1 from './MigrateV1'
 import MigrateV1Exchange from './MigrateV1/MigrateV1Exchange'
 import RemoveV1Exchange from './MigrateV1/RemoveV1Exchange'
 import Pool from './Pool'
-import Finance from './finance'
 import PoolFinder from './PoolFinder'
 // import Farm from './Farm'
 import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
-import { EN , allLanguages } from '../constants/localisation/languageCodes'
+import { TH , allLanguages } from '../constants/localisation/languageCodes'
 import { LanguageContext } from '../hooks/LanguageContext'
 import { TranslationsContext } from '../hooks/TranslationsContext'
 
@@ -80,9 +79,9 @@ export default function App() {
     const storedLangCode = localStorage.getItem('pancakeSwapLanguage')
     if (storedLangCode) {
       const storedLang = getStoredLang(storedLangCode)
-      setSelectedLanguage(storedLang)
+      setSelectedLanguage(TH)
     } else {
-      setSelectedLanguage(EN)
+      setSelectedLanguage(TH)
     }
   }, [])
 
@@ -92,7 +91,6 @@ export default function App() {
       .then(translationApiResponse => {
         if (translationApiResponse.data.length < 1) {
           setTranslations(['error'])
-          console.log('error11')
         } else {
           setTranslations(translationApiResponse.data)
         }
@@ -100,7 +98,6 @@ export default function App() {
       .then(() => setTranslatedLanguage(selectedLanguage))
       .catch(error => {
         setTranslations(['error'])
-        console.log('error11')
         console.error(error)
       })
   }
@@ -125,7 +122,6 @@ export default function App() {
                   <Popups />
                   <Web3ReactManager>
                     <Switch>
-                      <Route exact strict path="/finance" component={Finance} />
                       <Route exact strict path="/swap" component={Swap} />
                       <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
                       <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
